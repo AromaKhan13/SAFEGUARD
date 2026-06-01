@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAFEGUARD - Autonomous AI Security & AI Safety Routing System Grid</title>
     
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2=family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
-   <link rel="stylesheet" href="style.css">
+    <!-- FIXED: Changed 'css2=family' to 'css2?family' for proper font rendering -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3">
         <div class="container">
             <a class="navbar-brand heading-font fs-3 d-flex align-items-center gap-2" href="#">
@@ -38,6 +44,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center g-5">
@@ -63,14 +70,17 @@
         </div>
     </header>
 
+    <!-- System Monitoring Live Alert Ticker -->
     <div class="container my-2" data-aos="fade-up">
         <div class="alert-ticker p-3 d-flex align-items-center gap-3 font-monospace fw-bold" id="alertBox">
             <span class="pulse-dot"></span> 🚨 System Monitoring Matrix: Active & Encrypted...
         </div>
     </div>
 
+    <!-- Main Content Grid -->
     <main class="container my-5">
         
+        <!-- Solution Matrix Section -->
         <section id="solution" class="py-5">
             <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
                 <h2 class="h1 heading-font fw-bold">The SAFEGUARD Solution</h2>
@@ -109,6 +119,7 @@
             </div>
         </section>
 
+        <!-- Live Operations Control Console Grid -->
         <section id="dashboard" class="my-5" data-aos="fade-up" data-aos-duration="1000">
             <div class="dashboard-section">
                 <div class="row align-items-center g-4 mb-5">
@@ -123,7 +134,7 @@
                     </div>
                 </div>
 
-                <!-- FIXED: row-cols tuned for seamless mobile responsiveness to prevent breaking or overflow -->
+                <!-- Live Variable Metrics Cards -->
                 <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-center">
                     <div class="col">
                         <div class="stat-box">
@@ -157,6 +168,7 @@
                     </div>
                 </div>
 
+                <!-- Bottom Metrics Evaluation Blocks -->
                 <div class="mt-4 pt-2 border-top border-secondary border-opacity-20">
                     <div class="d-flex flex-nowrap overflow-auto gap-3 pb-2 justify-content-lg-center align-items-center scroll-container-wrapper" style="scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
                         
@@ -168,7 +180,6 @@
                             </div>
                         </div>
 
-                        <!-- ACCESSIBILITY IMPROVED: Added explicit aria-live wrappers around changing variables -->
                         <div class="px-4 py-2 rounded-3 d-flex align-items-center gap-3 min-w-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); flex: 1; max-width: 280px;">
                             <div class="text-info fs-4" id="clean-exit-icon"><i class="fas fa-shield-heart"></i></div>
                             <div aria-live="polite" id="clean-exit-accessibility-container">
@@ -178,7 +189,7 @@
                         </div>
 
                         <div class="px-4 py-2 rounded-3 d-flex align-items-center gap-3 min-w-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); flex: 1; max-width: 280px;">
-                            <div class="fs-4" id="threat-icon"><i class="fas fa-shield-virus text-info"></i></div>
+                            <div class="fs-4" id="threat-icon"><i class="fas fa-shield-halved text-info"></i></div>
                             <div aria-live="polite" id="threat-level-accessibility-container">
                                 <h5 class="m-0 heading-font fw-bold text-success text-uppercase" id="threat-level">LOW</h5>
                                 <p class="m-0 font-monospace text-uppercase" style="font-size: 10px; color: #94a3b8; white-space: nowrap;">Threat Level Evaluation</p>
@@ -191,6 +202,7 @@
             </div>
         </section>
 
+        <!-- Help Desk Integration Section -->
         <section id="contact" class="py-5" data-aos="fade-up">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
@@ -254,6 +266,7 @@
             </div>
         </section>
 
+        <!-- Engineering Group Team Section -->
         <section id="team" class="py-5">
             <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
                 <h2 class="h1 heading-font fw-bold">Meet the Team</h2>
@@ -287,6 +300,7 @@
 
     </main>
 
+    <!-- Footer Area -->
     <footer class="site-footer py-5" data-aos="fade-top">
         <div class="container">
             <div class="row g-4 text-start">
@@ -343,6 +357,7 @@
         </div>
     </footer>
 
+    <!-- Bootstrap & AOS JS Core Components -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -368,7 +383,7 @@
             const cleanExitElement = document.getElementById('clean-exit-status');
             const cleanExitIcon = document.getElementById('clean-exit-icon');
 
-            // ACCESSIBILITY LOGIC: Dynamic evaluation using distinct icons AND direct textual shifts for colorblind/screen readers
+            // ACCESSIBILITY LOGIC: Dynamic evaluation using distinct icons AND direct textual shifts
             if (totalThreats >= 3) {
                 threatLevelElement.innerText = "HIGH THREAT";
                 threatLevelElement.className = "m-0 heading-font fw-bold text-danger text-uppercase";
@@ -388,7 +403,8 @@
             } else {
                 threatLevelElement.innerText = "LOW / SAFE";
                 threatLevelElement.className = "m-0 heading-font fw-bold text-success text-uppercase";
-                threatIconElement.innerHTML = `<i class="fas fa-shield-check text-success" title="Safe Status"></i>`;
+                // FIXED: Replaced 'fa-shield-check' with free-tier available 'fa-shield-halved'
+                threatIconElement.innerHTML = `<i class="fas fa-shield-halved text-success" title="Safe Status"></i>`;
                 
                 cleanExitElement.innerText = "CLEAN EXIT AVAILABLE";
                 cleanExitElement.className = "m-0 heading-font fw-bold text-success text-uppercase";
