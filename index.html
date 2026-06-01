@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFEGUARD - Autonomous AI Security & AI Safety Routing System Grid</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2=family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-glass: rgba(255, 255, 255, 0.9);
+            --border-glass: #cbd5e1;
+            --brand-red: #ef4444;
+            --brand-dark: #0f172a;
+            --text-main: #0f172a;
+            --text-muted: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* PREMIUM NAVBAR */
+        .navbar-custom {
+            background: #0f172a;
+            border-bottom: 2px solid var(--brand-red);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff !important;
+        }
+
+        .navbar-brand span {
+            color: var(--brand-red);
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: #cbd5e1 !important;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.2rem !important;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0f172a 30%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-premium {
+            background: var(--brand-red);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 10px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium:hover {
+            background: #dc2626;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.25);
+        }
+
+        /* ALERTS BAR WITH PULSE */
+        .alert-ticker {
+            background: #ffffff;
+            border-left: 5px solid var(--brand-red);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+            transition: all 0.5s ease;
+            color: #0f172a !important;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--brand-red);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* GLASSMORPHISM CARDS */
+        .glass-card {
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--brand-red);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+        }
+
+        .feature-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--brand-red);
+            margin-bottom: 20px;
+        }
+
+        /* COMMAND CENTER DASHBOARD */
+        .dashboard-section {
+            background: var(--brand-dark);
+            color: #ffffff;
+            border-radius: 30px;
+            padding: 60px 40px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .stat-box:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--brand-red);
+        }
+
+        /* IMAGE STYLING */
+        .img-cover-frame {
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .img-cover-frame:hover {
+            transform: scale(1.02);
+        }
+
+        /* TEAM MATRIX CARD */
+        .team-card {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px 20px;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            border-color: var(--brand-red);
+        }
+
+        .avatar-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: var(--brand-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            border: 2px solid var(--border-glass);
+        }
+
+        /* ADVANCED SUPPORT CONTACT FORM */
+        .form-control-custom {
+            background: #ffffff;
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            padding: 14px 18px;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .form-control-custom:focus {
+            background: #ffffff;
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+            outline: none;
+        }
+
+        .form-label-custom {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        /* CUSTOM FOOTER PATTERN */
+        .site-footer {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+            border-top: 2px solid #e2e8f0;
+            font-size: 15px;
+            position: relative;
+        }
+
+        .brand-logo-footer {
+            font-size: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-tagline {
+            color: #475569 !important;
+            font-size: 14px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .small-title {
+            font-size: 15px;
+            font-weight: 700 !important;
+            letter-spacing: 1px;
+            color: #0f172a !important;
+            border-left: 3px solid var(--brand-red);
+            padding-left: 10px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #334155 !important;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: #ef4444 !important;
+            padding-left: 4px;
+        }
+
+        .footer-contact-item {
+            font-size: 14px;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* SCROLL TWEAKS FOR METRICS GRAPHIC LAYER */
+        .scroll-container-wrapper::-webkit-scrollbar {
+            height: 4px;
+        }
+        .scroll-container-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(239, 68, 68, 0.3);
+            border-radius: 10px;
+        }
+        .min-w-card {
+            min-width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand heading-font fs-3 d-flex align-items-center gap-2" href="#">
+                <i class="fas fa-shield-halved text-danger"></i> SAFE<span>GUARD</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Help Desk</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill bg-danger bg-opacity-10 text-danger font-monospace small mb-3">
+                        <span class="pulse-dot"></span> Next-Gen Multi-Threaded Inferencing Model
+                    </div>
+                    <h1 class="display-4 heading-font fw-bold mb-3 text-gradient">
+                        AI-Driven Security & AI Safety Routing System Grid
+                    </h1>
+                    <p class="fs-5 mb-4 leading-relaxed" style="color: var(--text-muted);">
+                        An autonomous, unified security framework engineered to process critical environment parameters, pinpoint threat variables via YOLOv8, and trace smart path routes instantly using A* optimization algorithms.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                        <a href="#dashboard" class="btn btn-premium shadow-sm">Launch Control Console</a>
+                        <a href="#contact" class="btn btn-outline-dark px-4 py-3 rounded-3 font-semibold text-uppercase tracking-wider small" style="font-size: 13px;">Request Nodes System</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="intrusion-detection-system.webp" alt="AI Intrusion and Human Tracking UI Interface" class="img-fluid img-cover-frame w-100" style="height: 440px;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-2" data-aos="fade-up">
+        <div class="alert-ticker p-3 d-flex align-items-center gap-3 font-monospace fw-bold" id="alertBox">
+            <span class="pulse-dot"></span> 🚨 System Monitoring Matrix: Active & Encrypted...
+        </div>
+    </div>
+
+    <main class="container my-5">
+        
+        <section id="solution" class="py-5">
+            <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
+                <h2 class="h1 heading-font fw-bold">The SAFEGUARD Solution</h2>
+                <p style="color: var(--text-muted);">High-performance threat processing layers built directly into edge hardware loops.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="glass-card h-100">
+                        <div class="feature-icon-box"><i class="fas fa-fire-flame-curved fa-lg"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-2">Fire Detection AI</h4>
+                        <p class="small mb-0" style="color: var(--text-muted);">Isolates dynamic pixel color metrics to flag active fires frames before critical structural compromises occur.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="glass-card h-100">
+                        <div class="feature-icon-box"><i class="fas fa-gun fa-lg"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-2">Threat Monitoring</h4>
+                        <p class="small mb-0" style="color: var(--text-muted);">Processes computer vision patterns in high-risk zones to isolate visual weapon anomalies inside miliseconds.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="glass-card h-100">
+                        <div class="feature-icon-box"><i class="fas fa-route fa-lg"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-2">AI Safety Routing System</h4>
+                        <p class="small mb-0" style="color: var(--text-muted);">Applies rapid A* spatial pathfinding parameters to chart secure exit courses away from hazard centroids.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="glass-card h-100">
+                        <div class="feature-icon-box"><i class="fas fa-bell fa-lg"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-2">Live Alerts Relays</h4>
+                        <p class="small mb-0" style="color: var(--text-muted);">Deploys simultaneous emergency notifications directly to localized safety handlers over Twilio protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="my-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="dashboard-section">
+                <div class="row align-items-center g-4 mb-5">
+                    <div class="col-md-7 text-center text-md-start">
+                        <h2 class="heading-font fw-bold m-0 text-white text-uppercase tracking-wide">Operational Command Grid</h2>
+                        <p class="text-muted font-monospace small mb-0 mt-1">REAL-TIME DATA LAYER ANOMALY MONITORING</p>
+                    </div>
+                    <div class="col-md-5 text-center text-md-end">
+                        <span class="badge border border-success bg-success bg-opacity-10 text-success px-3 py-2 font-monospace">
+                            ● GATEWAY NODE: CONNECTED
+                        </span>
+                    </div>
+                </div>
+
+                <!-- FIXED: row-cols tuned for seamless mobile responsiveness to prevent breaking or overflow -->
+                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-center">
+                    <div class="col">
+                        <div class="stat-box">
+                            <h3 class="display-6 heading-font fw-bold text-danger" id="fire-val">0</h3>
+                            <p class="text-light small text-uppercase font-monospace mb-0" style="opacity: 0.8; font-size: 11px;">Fire/Smoke Incidents</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="stat-box">
+                            <h3 class="display-6 heading-font fw-bold text-white" id="weapon-val">0</h3>
+                            <p class="text-light small text-uppercase font-monospace mb-0" style="opacity: 0.8; font-size: 11px;">Weapon Detected</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="stat-box">
+                            <h3 class="display-6 heading-font fw-bold text-white" id="snatch-val">0</h3>
+                            <p class="text-light small text-uppercase font-monospace mb-0" style="opacity: 0.8; font-size: 11px;">Snatching Cases</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="stat-box">
+                            <h3 class="display-6 heading-font fw-bold text-warning" id="kids-val">0</h3>
+                            <p class="text-light small text-uppercase font-monospace mb-0" style="opacity: 0.8; font-size: 11px;">Unattended Kids</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="stat-box">
+                            <h3 class="display-6 heading-font fw-bold text-success">20</h3>
+                            <p class="text-light small text-uppercase font-monospace mb-0" style="opacity: 0.8; font-size: 11px;">Missing child with Threshold</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-2 border-top border-secondary border-opacity-20">
+                    <div class="d-flex flex-nowrap overflow-auto gap-3 pb-2 justify-content-lg-center align-items-center scroll-container-wrapper" style="scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
+                        
+                        <div class="px-4 py-2 rounded-3 d-flex align-items-center gap-3 min-w-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); flex: 1; max-width: 280px;">
+                            <div class="text-success fs-4"><i class="fas fa-door-open"></i></div>
+                            <div>
+                                <h5 class="m-0 heading-font fw-bold text-success" id="exits-val">05</h5>
+                                <p class="m-0 font-monospace text-uppercase" style="font-size: 10px; color: #94a3b8; white-space: nowrap;">Cleared Exits System</p>
+                            </div>
+                        </div>
+
+                        <!-- ACCESSIBILITY IMPROVED: Added explicit aria-live wrappers around changing variables -->
+                        <div class="px-4 py-2 rounded-3 d-flex align-items-center gap-3 min-w-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); flex: 1; max-width: 280px;">
+                            <div class="text-info fs-4" id="clean-exit-icon"><i class="fas fa-shield-heart"></i></div>
+                            <div aria-live="polite" id="clean-exit-accessibility-container">
+                                <h5 class="m-0 heading-font fw-bold text-info text-uppercase" id="clean-exit-status">CLEAN EXIT</h5>
+                                <p class="m-0 font-monospace text-uppercase" style="font-size: 10px; color: #94a3b8; white-space: nowrap;">Route Security Status</p>
+                            </div>
+                        </div>
+
+                        <div class="px-4 py-2 rounded-3 d-flex align-items-center gap-3 min-w-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); flex: 1; max-width: 280px;">
+                            <div class="fs-4" id="threat-icon"><i class="fas fa-shield-virus text-info"></i></div>
+                            <div aria-live="polite" id="threat-level-accessibility-container">
+                                <h5 class="m-0 heading-font fw-bold text-success text-uppercase" id="threat-level">LOW</h5>
+                                <p class="m-0 font-monospace text-uppercase" style="font-size: 10px; color: #94a3b8; white-space: nowrap;">Threat Level Evaluation</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-5" data-aos="fade-up">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-danger bg-opacity-10 text-danger font-monospace small mb-3">
+                        <i class="fas fa-headset"></i> SAFEGUARD Help Desk
+                    </div>
+                    <h2 class="heading-font fw-bold text-gradient display-6 mb-3">System Integration & Support Request</h2>
+                    <p style="color: var(--text-muted);" class="mb-4">
+                        Do you require technical assistance, system adjustments, or customized AI routing setup loops? Fill out our architecture support form and our node developers will verify your request.
+                    </p>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="feature-icon-box mb-0"><i class="fas fa-shield"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-0">System Deployment Support</h6>
+                                <p class="small text-muted mb-0">Direct coordination regarding hardware and camera sync mapping.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="feature-icon-box mb-0"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Incident Handling Routing</h6>
+                                <p class="small text-muted mb-0">Urgent operational optimization inquiries mapped out instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
+                        <form id="helpDeskForm" onsubmit="event.preventDefault(); alert('Security Ticket Created Successfully! Our group engineers will respond via email shortly.');">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label-custom">Full Name</label>
+                                    <input type="text" class="form-control form-control-custom" placeholder="Enter name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-custom">Email Address</label>
+                                    <input type="email" class="form-control form-control-custom" placeholder="name@university.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-custom">Inquiry Type / Priority Matrix</label>
+                                    <select class="form-select form-control-custom" style="appearance: auto;" required>
+                                        <option value="" selected disabled>Select request urgency...</option>
+                                        <option value="hardware">YOLOv8 Camera Node Error</option>
+                                        <option value="routing">AI Safety Routing Optimization Query</option>
+                                        <option value="general">General System Integration Info</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-custom">Elaborate System Request</label>
+                                    <textarea class="form-control form-control-custom" rows="4" placeholder="Describe parameters or errors regarding your nodes layer..." required></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-premium w-100 py-3 shadow-sm">Submit System Ticket</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-5">
+            <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
+                <h2 class="h1 heading-font fw-bold">Meet the Team</h2>
+                <p style="color: var(--text-muted);">Core engineering group behind the development of the SAFEGUARD ecosystem.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="avatar-placeholder"><i class="fas fa-user-tie fa-2xl"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-1">Aroma Khilji</h4>
+                        <p class="text-danger small font-monospace fw-bold uppercase mb-0">Group Leader / Founder</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="avatar-placeholder"><i class="fas fa-user-gear fa-2xl"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-1">Hafsa Khan</h4>
+                        <p class="small font-monospace mb-0" style="color: var(--text-muted);">Co-Founder</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="avatar-placeholder"><i class="fas fa-user-ninja fa-2xl"></i></div>
+                        <h4 class="heading-font fw-bold h5 mb-1">Fiza Aslam</h4>
+                        <p class="small font-monospace mb-0" style="color: var(--text-muted);">Co-Founder</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer py-5" data-aos="fade-top">
+        <div class="container">
+            <div class="row g-4 text-start">
+                
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="heading-font fw-bold mb-3 d-flex align-items-center gap-2 brand-logo-footer">
+                        <i class="fas fa-shield-halved text-danger"></i> SAFE<span class="text-dark">GUARD</span>
+                    </h3>
+                    <p class="footer-tagline max-w-sm">
+                        Autonomous defense infrastructure engineering next-generation structural monitoring matrices.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5 class="heading-font small-title mb-3">Architecture</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#solution">Solution Matrix</a></li>
+                        <li><a href="#dashboard">Control Node</a></li>
+                        <li><a href="#team">Engineering Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h5 class="heading-font small-title mb-3">System Specifications</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#solution">YOLOv8 Threat Model</a></li>
+                        <li><a href="#solution">AI Safety Routing System</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="heading-font small-title mb-3">Contact Support</h5>
+                    <div class="d-flex flex-column gap-2 mt-2">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope text-danger"></i>
+                            <a href="mailto:support@safeguard.com" class="text-decoration-none text-muted">support@safeguard.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-network-wired text-danger"></i>
+                            <span class="small font-monospace text-muted">Node Gateway: Live</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4 border-secondary border-opacity-20">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start small text-muted">
+                    &copy; 2026 SAFEGUARD Security Grid. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Simulated Live Dashboard Logic for New Target Variables & Threats Evaluation
+        setInterval(() => {
+            const fire = Math.floor(Math.random() * 2);
+            const weapon = Math.floor(Math.random() * 3);
+            const snatch = Math.floor(Math.random() * 2);
+            const kids = Math.floor(Math.random() * 4);
+            
+            document.getElementById('fire-val').innerText = fire;
+            document.getElementById('weapon-val').innerText = weapon;
+            document.getElementById('snatch-val').innerText = snatch;
+            document.getElementById('kids-val').innerText = kids;
+
+            // Total active threats processing logic
+            const totalThreats = fire + weapon + snatch;
+            const threatLevelElement = document.getElementById('threat-level');
+            const threatIconElement = document.getElementById('threat-icon');
+            
+            const cleanExitElement = document.getElementById('clean-exit-status');
+            const cleanExitIcon = document.getElementById('clean-exit-icon');
+
+            // ACCESSIBILITY LOGIC: Dynamic evaluation using distinct icons AND direct textual shifts for colorblind/screen readers
+            if (totalThreats >= 3) {
+                threatLevelElement.innerText = "HIGH THREAT";
+                threatLevelElement.className = "m-0 heading-font fw-bold text-danger text-uppercase";
+                threatIconElement.innerHTML = `<i class="fas fa-triangle-exclamation text-danger" title="Danger Alert"></i>`;
+                
+                cleanExitElement.innerText = "BLOCKED EXITS";
+                cleanExitElement.className = "m-0 heading-font fw-bold text-danger text-uppercase";
+                cleanExitIcon.innerHTML = `<i class="fas fa-circle-xmark text-danger" title="Blocked Route"></i>`;
+            } else if (totalThreats >= 1) {
+                threatLevelElement.innerText = "MEDIUM THREAT";
+                threatLevelElement.className = "m-0 heading-font fw-bold text-warning text-uppercase";
+                threatIconElement.innerHTML = `<i class="fas fa-circle-exclamation text-warning" title="Warning Status"></i>`;
+                
+                cleanExitElement.innerText = "CAUTION REQUIRED";
+                cleanExitElement.className = "m-0 heading-font fw-bold text-warning text-uppercase";
+                cleanExitIcon.innerHTML = `<i class="fas fa-route text-warning" title="Rerouted Clear Path Available"></i>`;
+            } else {
+                threatLevelElement.innerText = "LOW / SAFE";
+                threatLevelElement.className = "m-0 heading-font fw-bold text-success text-uppercase";
+                threatIconElement.innerHTML = `<i class="fas fa-shield-check text-success" title="Safe Status"></i>`;
+                
+                cleanExitElement.innerText = "CLEAN EXIT AVAILABLE";
+                cleanExitElement.className = "m-0 heading-font fw-bold text-success text-uppercase";
+                cleanExitIcon.innerHTML = `<i class="fas fa-shield-heart text-success" title="Secure Path"></i>`;
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
