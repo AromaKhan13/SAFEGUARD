@@ -202,7 +202,77 @@
             margin: 0 auto 20px auto;
             border: 2px solid var(--border-glass);
         }
+/* ========================================================================= */
+/* SAFEGUARD PREMIUM CYBER FORM EXTENSION                                    */
+/* ========================================================================= */
 
+.cyber-glass-card {
+    background: #050810; 
+    border: 1px solid rgba(239, 68, 68, 0.2); 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.cyber-minimal-input {
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    color: #ffffff !important;
+    padding: 12px 4px !important;
+    font-size: 14px !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cyber-minimal-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom-color: #ef4444 !important;
+    padding-left: 8px !important;
+}
+
+.cyber-minimal-input::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+    font-size: 13px;
+}
+
+.cyber-select-custom {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.cyber-select-custom option {
+    background: #050810 !important;
+    color: #ffffff !important;
+}
+
+.cyber-message-box {
+    background: rgba(255, 255, 255, 0.01) !important; 
+    border: 1px dashed rgba(239, 68, 68, 0.3) !important; 
+    color: #cbd5e1 !important; 
+    font-size: 13px !important; 
+    border-radius: 4px !important; 
+    resize: none !important; 
+    padding: 12px !important;
+}
+
+.glow-btn-cyber {
+    background: transparent !important;
+    border: 1px solid #ef4444 !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+}
+
+.glow-btn-cyber:hover {
+    background: #ef4444 !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5) !important;
+    color: #ffffff !important;
+}
         /* ADVANCED SUPPORT CONTACT FORM */
         .form-control-custom {
             background: #ffffff;
@@ -256,6 +326,75 @@
             border-left: 3px solid var(--brand-red);
             padding-left: 10px;
         }
+        .glass-profile-card{
+    width: 300px;          /* smaller card */
+    padding: 28px 20px;
+    text-align: center;
+
+    /* Dark Blue Glass Background */
+    background: rgba(15, 23, 42, 0.75);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        0 0 20px rgba(59,130,246,0.12);
+
+    transition: all 0.4s ease;
+
+    /* Left Side */
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.glass-profile-card:hover{
+    transform: translateY(-6px);
+
+    border-color: rgba(59,130,246,0.5);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.45),
+        0 0 25px rgba(59,130,246,0.3);
+}
+
+.profile-icon{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.3);
+
+    color: #3b82f6;
+    font-size: 28px;
+
+    box-shadow: 0 0 15px rgba(59,130,246,0.2);
+}
+
+.glass-profile-card h4{
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+}
+
+.profile-role{
+    color: #60a5fa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
 
         .footer-links li {
             margin-bottom: 10px;
